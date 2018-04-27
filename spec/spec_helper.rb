@@ -26,6 +26,7 @@ Algolia.init :application_id => ENV['ALGOLIA_APPLICATION_ID'], :api_key => ENV['
 
 RSpec.configure do |config|
   config.mock_with :rspec
+  config.expect_with(:rspec) { |c| c.syntax = :should }
 
   config.before(:suite) do
     WebMock.disable!
